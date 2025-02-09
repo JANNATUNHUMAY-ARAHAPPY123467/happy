@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Multiple Clip Paths in One Portal</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+        }
+
+        .portal {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, cyan, transparent);
+            clip-path: circle(50%);
+            animation: rotate 6s infinite linear;
+        }
+
+        .path {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 255, 255, 0.6);
+            animation: move 2s infinite ease-in-out;
+        }
+
+        /* First clip-path */
+        .path-1 {
+            clip-path: polygon(50% 0%, 60% 100%, 40% 100%);
+        }
+
+        /* Second clip-path */
+        .path-2 {
+            clip-path: ellipse(50% 40% at 50% 50%);
+            animation-delay: 0.5s;
+        }
+
+        /* Third clip-path */
+        .path-3 {
+            clip-path: circle(30% at 50% 50%);
+            animation-delay: 1s;
+        }
+
+        /* Animation to rotate */
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Animation to scale and change opacity */
+        @keyframes move {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="portal">
+        <!-- First Path -->
+        <div class="path path-1"></div>
+        <!-- Second Path -->
+        <div class="path path-2"></div>
+        <!-- Third Path -->
+        <div class="path path-3"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layout</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .grid {
+     width: 100%;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-gap: 10px;
+    }
+    
+    .a1 {
+      height: 100px;
+      width: 100%;
+      background: lightblue;
+      grid-column: 1/4;
+      display: flex;
+      align-items: center;
+     
+      img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-left: 20px;
+      }
+      input{
+        width: 500px;
+        padding: 5px;
+        text-align: center;
+        font-size: 18px;
+        margin-left: 200px;
+        border-radius: 10px;
+      }
+      .btn {
+        margin-left: 150px;
+        button {
+          margin-left: 20px;
+          padding: 5px 20px;
+          a{
+            text-decoration: none;
+            font-size: 20px;
+          }
+        }
+      }
+      i {
+        margin-left: 100px;
+        font-size: 30px;
+      }
+    }
+    
+    .a2 {
+       height: 50px;
+       width: 100%;
+       background: orangered;
+      grid-column: 1/4;
+      display: flex;
+      align-items: center;
+      nav ul {
+        display: flex;
+      }
+      nav ul li {
+        list-style: none;
+        margin-left: 15px;
+       a {
+         text-decoration: none;
+         color: black;
+       }
+      }
+    }
+    
+    .a3 {
+      height: 300px;
+      width: 250px;
+      background: gold;
+      img {
+        height: 100px;
+        width: 150px;
+        margin-left: 50px;
+      }
+      h2{
+        text-align: center;
+        margin-top: 5px;
+        font-family: Times New Roman;
+      }
+      p{
+        font-family: Verdana;
+        padding: 10px;
+      }
+    }
+    .a4 {
+      height: 300px;
+      width: 940px;
+      background: cyan;
+    }
+    .a5 {
+      height: 300px;
+      width: 250px;
+      background: grey;
+    }
+    .a6 {
+      height: 70px;
+      width: 100%;
+      grid-column: 1/4;
+      background: green;
+    }
+    h3{
+       text-align: center;
+       margin-top: 5px;
+       padding: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      
+      <div class="a1">
+        
+        <img src="tree.jpg" alt="logo">
+        <input type="search" placeholder="Search here">
+        
+         <div class="btn">
+           <button><a href="#">Log in</a></button>
+         <button><a href="#">Sign up</a>
+         </button>
+         </div>
+         
+         <i class="fa-solid fa-bars"></i>
+      </div>
+       
+      <div class="a2">
+                <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">
+              <select>
+                <option>More</option>
+              </select>
+            </a></li>
+          </ul>
+        </nav>
+      </div>
+      
+      <div class="a3">
+        <img src="tree.jpg" alt="9">
+        <h2>Welcome</h2>
+        <p>"It's easy to be positive when everything is working out. It's much harder, much much harder when nothing is working out. But that's when we need it the most.Everything is worth the prize".</p>
+      </div>
+      
+      <div class="a4"></div>
+      <div class="a5"></div>
+      <div class="a6"><h3>©copyright</h3></div>
+    </div>
+  </body>
+</html>

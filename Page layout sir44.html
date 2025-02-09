@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            background-color: yellow;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        .logo{
+           width: 25%;
+        }
+
+        .logo img{
+            width: 100%;
+        }
+
+        /* Logo End */
+
+        .search{
+            width: 75%;
+        }
+
+        .search form{
+            display: flex;
+            justify-content: center;
+        }
+
+        .search input{
+            width: 40%;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .search button{
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border:  none;
+            cursor: pointer;
+        }
+
+        /* Search End */
+
+        .btn{
+            width: 25%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn button{
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border:  none;
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <!-- Header -->
+     <header>
+        <div class="logo">
+            <a href="#">
+                <img src="tree.jpg" alt="logo">
+            </a>
+        </div>
+        <div class="search">
+            <form action="">
+                <input type="search" placeholder="Search">
+                <button>Search</button>
+            </form>
+        </div>
+
+        <div class="btn">
+            <button>Sign In</button>
+            <button>Sign Up</button>
+        </div>
+     </header>
+
+</body>
+</html>

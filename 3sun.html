@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System with Clip-Path and Dashed Orbits</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .solar-system {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+
+        /* Sun */
+        .sun {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, yellow, orange, red);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 50px 20px yellow;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        /* Hover effect on Sun */
+        .sun:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+            background: radial-gradient(circle, gold, orange, red);
+        }
+
+        /* Orbits (Dashed) */
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Hover effect on Orbits */
+        .orbit:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Planets with Clip-Path */
+        .planet {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            clip-path: polygon(50% 0%, 65% 30%, 50% 100%, 35% 30%); /* Triangle shape */
+            background: radial-gradient(circle, cyan, blue);
+            animation: orbit 4s linear infinite;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        /* Hover effect on planets */
+        .planet:hover {
+            transform: translate(-50%) scale(1.5); /* Increase size */
+            background: radial-gradient(circle, lightgreen, green); /* Change color */
+        }
+
+        /* Planets Orbit Animations */
+        .orbit1 {
+            width: 200px;
+            height: 200px;
+        }
+        .orbit2 {
+            width: 300px;
+            height: 300px;
+        }
+        .orbit3 {
+            width: 400px;
+            height: 400px;
+        }
+
+        .orbit1 .planet {
+            animation: orbit1 4s linear infinite;
+            background: radial-gradient(circle, limegreen, darkgreen);
+        }
+        .orbit2 .planet {
+            animation: orbit2 6s linear infinite;
+            background: radial-gradient(circle, lightblue, navy);
+        }
+        .orbit3 .planet {
+            animation: orbit3 8s linear infinite;
+            background: radial-gradient(circle, pink, crimson);
+        }
+
+        /* Keyframes for the planet orbits */
+        @keyframes orbit1 {
+            0% {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            }
+        }
+        @keyframes orbit2 {
+            0% {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+            }
+        }
+        @keyframes orbit3 {
+            0% {
+                transform: rotate(0deg) translateX(200px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(200px) rotate(-360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="solar-system">
+        <!-- Sun -->
+        <div class="sun"></div>
+
+        <!-- Orbits with dashed lines -->
+        <div class="orbit orbit1">
+            <div class="planet"></div>
+        </div>
+        <div class="orbit orbit2">
+            <div class="planet"></div>
+        </div>
+        <div class="orbit orbit3">
+            <div class="planet"></div>
+        </div>
+    </div>
+</body>
+</html>

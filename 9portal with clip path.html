@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Portal with Clip Path</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+        }
+
+        .portal {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, cyan, transparent);
+            clip-path: circle(50%);
+            animation: rotate 4s infinite linear;
+        }
+
+        .path {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: rgba(0, 255, 255, 0.5);
+            clip-path: polygon(50% 0%, 52% 100%, 48% 100%);
+            animation: move 2s infinite ease-in-out;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes move {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="portal">
+        <div class="path"></div>
+    </div>
+</body>
+</html>
